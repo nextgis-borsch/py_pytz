@@ -13,7 +13,7 @@ with open(sys.argv[1]) as data_file:
 
     version = data['info']['version']
     for i in data['releases'][version]:
-        if i['url'].endswith('tar.gz'):
+        if i['url'].endswith(('tar.gz', 'zip')):
             download_url = i['url']
             date = i['upload_time'].replace('T', ' ')
             break
